@@ -2,7 +2,7 @@
 # \file NVS_morseovka.py
 # \brief Python soubor s komentáři
 # \author David Novák, Roman Juřík, Martin Miklík
-# \date Prosinec 2019
+# \date Listopad 2019
 # \details Konzolová aplikace - Překladač morseovy abecedy
 #   - Uživatel si může zvolit způsob překládání
 #      + z morseovy abecedy do čtivého jazyka
