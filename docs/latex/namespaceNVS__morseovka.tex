@@ -1,0 +1,162 @@
+\hypertarget{namespaceNVS__morseovka}{}\doxysection{N\+V\+S\+\_\+morseovka Namespace Reference}
+\label{namespaceNVS__morseovka}\index{NVS\_morseovka@{NVS\_morseovka}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \mbox{\hyperlink{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}{morse}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+dictionary {\bfseries morses}
+\item 
+dictionary {\bfseries morse\+\_\+s}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyVerb} # \file NVS_morseovka.py
+ # \brief Python soubor s komentáři
+ #\author David Novák, Roman Juřík, Martin Miklík
+ # \date Prosinec 2019
+ # \details Konzolová aplikace - Překladač morseovy abecedy
+ #   - Uživatel si může zvolit způsob překládání
+ #      + z morseovy abecedy do čtivého jazyka
+ #      + z čtivého jazyka do morseovky
+ #   - Možnost znovuspuštění programu
+ #
+ # Zdrojové kódy jsou zapsány ve znakové sadě UTF-8
+\end{DoxyVerb}
+ 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}\label{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}} 
+\index{NVS\_morseovka@{NVS\_morseovka}!morse@{morse}}
+\index{morse@{morse}!NVS\_morseovka@{NVS\_morseovka}}
+\doxysubsubsection{\texorpdfstring{morse()}{morse()}}
+{\footnotesize\ttfamily def N\+V\+S\+\_\+morseovka.\+morse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyVerb}založení funkce celého programu\end{DoxyVerb}
+ 
+
+Definition at line 44 of file N\+V\+S\+\_\+morseovka.\+py.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{44 \textcolor{keyword}{def }\mbox{\hyperlink{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}{morse}}():}
+\DoxyCodeLine{45 \textcolor{stringliteral}{""" založení funkce celého programu"""}}
+\DoxyCodeLine{46     print()}
+\DoxyCodeLine{47     print(\textcolor{stringliteral}{"ŠIFROVÁNÍ MORSEOVY ABECEDY"})}
+\DoxyCodeLine{48     print(\textcolor{stringliteral}{"     1.Zakódování"})}
+\DoxyCodeLine{49     print(\textcolor{stringliteral}{"     2.Odkódování"})}
+\DoxyCodeLine{50     print(\textcolor{stringliteral}{"Vyberte způsob šifrování: "})}
+\DoxyCodeLine{51     \textcolor{comment}{\#vypsání menu}}
+\DoxyCodeLine{52 }
+\DoxyCodeLine{53     \textcolor{keyword}{def }encode():}
+\DoxyCodeLine{54     \textcolor{stringliteral}{"""funkce pro zakodování textu do morseovy abecedy"""}}
+\DoxyCodeLine{55         sentence = input(\textcolor{stringliteral}{"Co chcete zakódovat: "})}
+\DoxyCodeLine{56         \textcolor{stringliteral}{"""textový řetězec , který chceme zakodovat"""}}
+\DoxyCodeLine{57         print()}
+\DoxyCodeLine{58         \textcolor{keywordflow}{for} char \textcolor{keywordflow}{in} sentence:}
+\DoxyCodeLine{59              print(morses[char.upper()],end = \textcolor{stringliteral}{" "} )}
+\DoxyCodeLine{60         \textcolor{stringliteral}{"""cyklus,který předělá textový řetězec do znaků"""}}
+\DoxyCodeLine{61 }
+\DoxyCodeLine{62 }
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{stringliteral}{"""funkce pro změnu morseovy abecedy do čitelného textu"""}}
+\DoxyCodeLine{65     \textcolor{keyword}{def }decode():}
+\DoxyCodeLine{66         \textcolor{stringliteral}{"""zadání kodu , který chceme přeložit"""}}
+\DoxyCodeLine{67         code = input (\textcolor{stringliteral}{"Co chcete odkodóvat(mezi jednotlivými písmeny udělejte mezeru!!: "})}
+\DoxyCodeLine{68         print()}
+\DoxyCodeLine{69         \textcolor{stringliteral}{"""cyklus , který předělá znaky morseovy abecedy do abecedy"""}}
+\DoxyCodeLine{70         \textcolor{keywordflow}{for} item \textcolor{keywordflow}{in} code.split(\textcolor{stringliteral}{' '}):}
+\DoxyCodeLine{71                 print(morse\_s.get(item), end = \textcolor{stringliteral}{" "} )}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 \textcolor{stringliteral}{"""funkce ,která v menu rozpozná jaký způsob kodovaní chceme vybrat"""}}
+\DoxyCodeLine{74     \textcolor{keyword}{def }choices():}
+\DoxyCodeLine{75         \textcolor{stringliteral}{"""try/except ošetřuje chybové hlášky aby celý program nespadl a sputí program znovu"""}}
+\DoxyCodeLine{76         \textcolor{keywordflow}{try}:}
+\DoxyCodeLine{77              choice = int(input())}
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79              \textcolor{keywordflow}{if} choice == 1:}
+\DoxyCodeLine{80                  encode()}
+\DoxyCodeLine{81 }
+\DoxyCodeLine{82              \textcolor{keywordflow}{elif} choice == 2:}
+\DoxyCodeLine{83                  decode()}
+\DoxyCodeLine{84              \textcolor{keywordflow}{else}:}
+\DoxyCodeLine{85                  print(\textcolor{stringliteral}{"špatná možnost, zkus to znovu"})}
+\DoxyCodeLine{86                  choices()}
+\DoxyCodeLine{87         \textcolor{keywordflow}{except} ValueError:}
+\DoxyCodeLine{88             print(\textcolor{stringliteral}{"špatná volba"})}
+\DoxyCodeLine{89             \mbox{\hyperlink{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}{morse}}()}
+\DoxyCodeLine{90 }
+\DoxyCodeLine{91     choices()}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93     print()}
+\DoxyCodeLine{94     print()}
+\DoxyCodeLine{95 \textcolor{stringliteral}{"""retry nám po ukončení kdoování nabídne spustit program znou nebo jej vypne"""}}
+\DoxyCodeLine{96     retry = input(\textcolor{stringliteral}{"Chcete spustit program znovu ?(ano/ne)\(\backslash\)n"})}
+\DoxyCodeLine{97     \textcolor{keywordflow}{if} retry == \textcolor{stringliteral}{"ano"}:}
+\DoxyCodeLine{98         print()}
+\DoxyCodeLine{99         \mbox{\hyperlink{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}{morse}}()}
+\DoxyCodeLine{100     \textcolor{keywordflow}{if} retry == \textcolor{stringliteral}{"ne"}:}
+\DoxyCodeLine{101         quit(0)}
+\DoxyCodeLine{102 }
+\DoxyCodeLine{103 }
+\DoxyCodeLine{104 }
+\DoxyCodeLine{105 \mbox{\hyperlink{namespaceNVS__morseovka_aad7a80ae102e008e3f1002d4ae5e01b4}{morse}}()}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{namespaceNVS__morseovka_ac934a18846855841b4cedd72ffee7d5b}\label{namespaceNVS__morseovka_ac934a18846855841b4cedd72ffee7d5b}} 
+\index{NVS\_morseovka@{NVS\_morseovka}!morse\_s@{morse\_s}}
+\index{morse\_s@{morse\_s}!NVS\_morseovka@{NVS\_morseovka}}
+\doxysubsubsection{\texorpdfstring{morse\_s}{morse\_s}}
+{\footnotesize\ttfamily dictionary N\+V\+S\+\_\+morseovka.\+morse\+\_\+s}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'.-\/'} : \textcolor{stringliteral}{'A'},      \textcolor{stringliteral}{'-\/...'}: \textcolor{stringliteral}{'B'},    \textcolor{stringliteral}{'-\/.-\/.'}:\textcolor{stringliteral}{'C'},}
+\DoxyCodeLine{2           \textcolor{stringliteral}{'-\/..'} : \textcolor{stringliteral}{'D'},     \textcolor{stringliteral}{'.'} : \textcolor{stringliteral}{'E'},      \textcolor{stringliteral}{'..-\/.'}:\textcolor{stringliteral}{'F'},}
+\DoxyCodeLine{3           \textcolor{stringliteral}{'-\/-\/.'} : \textcolor{stringliteral}{'G'},     \textcolor{stringliteral}{'....'}: \textcolor{stringliteral}{'H'},    \textcolor{stringliteral}{'..'}:\textcolor{stringliteral}{'I'},}
+\DoxyCodeLine{4           \textcolor{stringliteral}{'.-\/-\/-\/'} : \textcolor{stringliteral}{'J'},    \textcolor{stringliteral}{'-\/.-\/'}: \textcolor{stringliteral}{'K'},     \textcolor{stringliteral}{'.-\/..'}:\textcolor{stringliteral}{'L'},}
+\DoxyCodeLine{5           \textcolor{stringliteral}{'-\/-\/'} : \textcolor{stringliteral}{'M'},      \textcolor{stringliteral}{'-\/.'}: \textcolor{stringliteral}{'N'},      \textcolor{stringliteral}{'-\/-\/-\/'}: \textcolor{stringliteral}{'O'},}
+\DoxyCodeLine{6           \textcolor{stringliteral}{'.-\/-\/.'} : \textcolor{stringliteral}{'P'},    \textcolor{stringliteral}{'-\/-\/.-\/'}: \textcolor{stringliteral}{'Q'},    \textcolor{stringliteral}{'.-\/.'}: \textcolor{stringliteral}{'R'},}
+\DoxyCodeLine{7           \textcolor{stringliteral}{'...'} : \textcolor{stringliteral}{'S'},     \textcolor{stringliteral}{'-\/'} : \textcolor{stringliteral}{'T'},      \textcolor{stringliteral}{'..-\/'}: \textcolor{stringliteral}{'U'},}
+\DoxyCodeLine{8           \textcolor{stringliteral}{'...-\/'} : \textcolor{stringliteral}{'V'},    \textcolor{stringliteral}{'.-\/-\/'}: \textcolor{stringliteral}{'W'},     \textcolor{stringliteral}{'-\/..-\/'}: \textcolor{stringliteral}{'X'},}
+\DoxyCodeLine{9           \textcolor{stringliteral}{'-\/.-\/-\/'} : \textcolor{stringliteral}{'Y'},    \textcolor{stringliteral}{'-\/-\/..'}: \textcolor{stringliteral}{'Z'},\textcolor{stringliteral}{'1'}:\textcolor{stringliteral}{'1'},\textcolor{stringliteral}{'2'}:\textcolor{stringliteral}{'2'},}
+\DoxyCodeLine{10           \textcolor{stringliteral}{'3'}:\textcolor{stringliteral}{'3'},\textcolor{stringliteral}{'4'}:\textcolor{stringliteral}{'4'},\textcolor{stringliteral}{'5'}:\textcolor{stringliteral}{'5'},\textcolor{stringliteral}{'6'}:\textcolor{stringliteral}{'6'},\textcolor{stringliteral}{'7'}:\textcolor{stringliteral}{'7'},}
+\DoxyCodeLine{11           \textcolor{stringliteral}{'8'}:\textcolor{stringliteral}{'8'},\textcolor{stringliteral}{'9'}:\textcolor{stringliteral}{'9'},\}}
+
+\end{DoxyCode}
+
+
+Definition at line 32 of file N\+V\+S\+\_\+morseovka.\+py.
+
+\mbox{\Hypertarget{namespaceNVS__morseovka_a2ad0172e3b1dc841a57a75503674f4d3}\label{namespaceNVS__morseovka_a2ad0172e3b1dc841a57a75503674f4d3}} 
+\index{NVS\_morseovka@{NVS\_morseovka}!morses@{morses}}
+\index{morses@{morses}!NVS\_morseovka@{NVS\_morseovka}}
+\doxysubsubsection{\texorpdfstring{morses}{morses}}
+{\footnotesize\ttfamily dictionary N\+V\+S\+\_\+morseovka.\+morses}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 =  \{\textcolor{stringliteral}{'A'}: \textcolor{stringliteral}{'.-\/'}, \textcolor{stringliteral}{'B'}: \textcolor{stringliteral}{'-\/...'}, \textcolor{stringliteral}{'C'}: \textcolor{stringliteral}{'-\/.-\/.'},}
+\DoxyCodeLine{2           \textcolor{stringliteral}{'D'}: \textcolor{stringliteral}{'-\/..'}, \textcolor{stringliteral}{'E'}: \textcolor{stringliteral}{'.'}, \textcolor{stringliteral}{'F'}: \textcolor{stringliteral}{'..-\/.'},}
+\DoxyCodeLine{3           \textcolor{stringliteral}{'G'}: \textcolor{stringliteral}{'-\/-\/.'}, \textcolor{stringliteral}{'H'}: \textcolor{stringliteral}{'....'}, \textcolor{stringliteral}{'I'}: \textcolor{stringliteral}{'..'},}
+\DoxyCodeLine{4           \textcolor{stringliteral}{'J'}: \textcolor{stringliteral}{'.-\/-\/-\/'}, \textcolor{stringliteral}{'K'}: \textcolor{stringliteral}{'-\/.-\/'}, \textcolor{stringliteral}{'L'}: \textcolor{stringliteral}{'.-\/..'},}
+\DoxyCodeLine{5           \textcolor{stringliteral}{'M'}: \textcolor{stringliteral}{'-\/-\/'}, \textcolor{stringliteral}{'N'}: \textcolor{stringliteral}{'-\/.'}, \textcolor{stringliteral}{'O'}: \textcolor{stringliteral}{'-\/-\/-\/'},}
+\DoxyCodeLine{6           \textcolor{stringliteral}{'P'}: \textcolor{stringliteral}{'.-\/-\/.'}, \textcolor{stringliteral}{'Q'}: \textcolor{stringliteral}{'-\/-\/.-\/'}, \textcolor{stringliteral}{'R'}: \textcolor{stringliteral}{'.-\/.'},}
+\DoxyCodeLine{7           \textcolor{stringliteral}{'S'}: \textcolor{stringliteral}{'...'}, \textcolor{stringliteral}{'T'}: \textcolor{stringliteral}{'-\/'}, \textcolor{stringliteral}{'U'}: \textcolor{stringliteral}{'..-\/'},}
+\DoxyCodeLine{8           \textcolor{stringliteral}{'V'}: \textcolor{stringliteral}{'...-\/'}, \textcolor{stringliteral}{'W'}: \textcolor{stringliteral}{'.-\/-\/'}, \textcolor{stringliteral}{'X'}: \textcolor{stringliteral}{'-\/..-\/'},}
+\DoxyCodeLine{9           \textcolor{stringliteral}{'Y'}: \textcolor{stringliteral}{'-\/.-\/-\/'}, \textcolor{stringliteral}{'Z'}: \textcolor{stringliteral}{'-\/-\/..'},\textcolor{stringliteral}{'1'}:\textcolor{stringliteral}{'1'},\textcolor{stringliteral}{'2'}:\textcolor{stringliteral}{'2'},}
+\DoxyCodeLine{10           \textcolor{stringliteral}{'3'}:\textcolor{stringliteral}{'3'},\textcolor{stringliteral}{'4'}:\textcolor{stringliteral}{'4'},\textcolor{stringliteral}{'5'}:\textcolor{stringliteral}{'5'},\textcolor{stringliteral}{'6'}:\textcolor{stringliteral}{'6'},\textcolor{stringliteral}{'7'}:\textcolor{stringliteral}{'7'},}
+\DoxyCodeLine{11           \textcolor{stringliteral}{'8'}:\textcolor{stringliteral}{'8'},\textcolor{stringliteral}{'9'}:\textcolor{stringliteral}{'9'},\}}
+
+\end{DoxyCode}
+
+
+Definition at line 18 of file N\+V\+S\+\_\+morseovka.\+py.
+
